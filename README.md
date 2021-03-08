@@ -6,13 +6,18 @@ Public website for Flexspot Fantasy Football community.
 
 TODO: Write overview on how to set up for development/testing.
 
+The backend runs on port 4000 by default.
+
 ### Prerequisites
 
-TODO: List what things you need to install the software and how to install them
+NodeJS >= v14.0
 
 ### Installing
 
 TODO: Write steps in order to get a dev environment running.
+
+- In root directory, run `docker-compose up -d` to get a database running.
+- Inside `/backend`, run `yarn dev`
 
 ## Running the tests
 
@@ -24,8 +29,8 @@ TODO: Deploy this code.
 
 ## Built With
 
-* [NextJS](https://nextjs.org/) - Front end, uses react behind the scenes.
-* [KeystoneJS](https://www.keystonejs.com/) - Headless CMS backend.
+- [NextJS](https://nextjs.org/) - Front end, uses react behind the scenes.
+- [KeystoneJS](https://www.keystonejs.com/) - Headless CMS backend.
 
 ## Contributing
 
@@ -33,11 +38,11 @@ TODO: Write something for how to contribute to this
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
-* **Chris Parsons** - *Initial work* - [PurpleBooth](https://github.com/chrisparsons83)
+- **Chris Parsons** - _Initial work_ - [PurpleBooth](https://github.com/chrisparsons83)
 
 See also the list of [contributors](https://github.com/chrisparsons83/flexspotffwebsite/contributors) who participated in this project.
 
@@ -49,6 +54,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 TODO: Fill out the below.
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
