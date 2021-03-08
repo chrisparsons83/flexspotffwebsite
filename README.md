@@ -42,7 +42,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-- **Chris Parsons** - _Initial work_ - [PurpleBooth](https://github.com/chrisparsons83)
+- **Chris Parsons** - _Initial work_ - [chrisparsons83](https://github.com/chrisparsons83)
 
 See also the list of [contributors](https://github.com/chrisparsons83/flexspotffwebsite/contributors) who participated in this project.
 
