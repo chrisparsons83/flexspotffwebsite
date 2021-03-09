@@ -4,8 +4,7 @@ Public website for Flexspot Fantasy Football community.
 
 ## Getting Started
 
-TODO: Write overview on how to set up for development/testing.
-
+The frontend runs on port 3000 by default.
 The backend runs on port 4000 by default.
 
 ### Prerequisites
@@ -21,10 +20,9 @@ Docker Compose
 
 ### Installing
 
-TODO: Write steps in order to get a dev environment running.
-
 - In root directory, run `docker-compose up -d` to get a database running.
 - Inside `/backend`, run `yarn dev`
+- Inside `/frontend`, run `yarn dev`
 
 ## Running the tests
 
