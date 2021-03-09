@@ -7,6 +7,60 @@ type Scalars = {
   readonly JSON: import('@keystone-next/types').JSONValue;
 };
 
+export type SeasonWhereInput = {
+  readonly AND?: ReadonlyArray<SeasonWhereInput | null> | null;
+  readonly OR?: ReadonlyArray<SeasonWhereInput | null> | null;
+  readonly id?: Scalars['ID'] | null;
+  readonly id_not?: Scalars['ID'] | null;
+  readonly id_lt?: Scalars['ID'] | null;
+  readonly id_lte?: Scalars['ID'] | null;
+  readonly id_gt?: Scalars['ID'] | null;
+  readonly id_gte?: Scalars['ID'] | null;
+  readonly id_in?: ReadonlyArray<Scalars['ID'] | null> | null;
+  readonly id_not_in?: ReadonlyArray<Scalars['ID'] | null> | null;
+  readonly year?: Scalars['String'] | null;
+  readonly year_not?: Scalars['String'] | null;
+  readonly year_contains?: Scalars['String'] | null;
+  readonly year_not_contains?: Scalars['String'] | null;
+  readonly year_starts_with?: Scalars['String'] | null;
+  readonly year_not_starts_with?: Scalars['String'] | null;
+  readonly year_ends_with?: Scalars['String'] | null;
+  readonly year_not_ends_with?: Scalars['String'] | null;
+  readonly year_i?: Scalars['String'] | null;
+  readonly year_not_i?: Scalars['String'] | null;
+  readonly year_contains_i?: Scalars['String'] | null;
+  readonly year_not_contains_i?: Scalars['String'] | null;
+  readonly year_starts_with_i?: Scalars['String'] | null;
+  readonly year_not_starts_with_i?: Scalars['String'] | null;
+  readonly year_ends_with_i?: Scalars['String'] | null;
+  readonly year_not_ends_with_i?: Scalars['String'] | null;
+  readonly year_in?: ReadonlyArray<Scalars['String'] | null> | null;
+  readonly year_not_in?: ReadonlyArray<Scalars['String'] | null> | null;
+};
+
+export type SeasonWhereUniqueInput = {
+  readonly id: Scalars['ID'];
+};
+
+export type SortSeasonsBy = 'id_ASC' | 'id_DESC' | 'year_ASC' | 'year_DESC';
+
+export type SeasonUpdateInput = {
+  readonly year?: Scalars['String'] | null;
+};
+
+export type SeasonsUpdateInput = {
+  readonly id: Scalars['ID'];
+  readonly data?: SeasonUpdateInput | null;
+};
+
+export type SeasonCreateInput = {
+  readonly year?: Scalars['String'] | null;
+};
+
+export type SeasonsCreateInput = {
+  readonly data?: SeasonCreateInput | null;
+};
+
 export type UserWhereInput = {
   readonly AND?: ReadonlyArray<UserWhereInput | null> | null;
   readonly OR?: ReadonlyArray<UserWhereInput | null> | null;
@@ -123,6 +177,38 @@ export type KeystoneAdminUIFieldMetaItemViewFieldMode =
 
 export type KeystoneAdminUISortDirection = 'ASC' | 'DESC';
 
+export type SeasonListTypeInfo = {
+  key: 'Season';
+  fields: 'id' | 'year';
+  backing: {
+    readonly id: string;
+    readonly year?: string | null;
+  };
+  inputs: {
+    where: SeasonWhereInput;
+    create: SeasonCreateInput;
+    update: SeasonUpdateInput;
+  };
+  args: {
+    listQuery: {
+      readonly where?: SeasonWhereInput | null;
+      readonly sortBy?: ReadonlyArray<SortSeasonsBy> | null;
+      readonly first?: Scalars['Int'] | null;
+      readonly skip?: Scalars['Int'] | null;
+    };
+  };
+};
+
+export type SeasonListFn = (
+  listConfig: import('@keystone-next/keystone/schema').ListConfig<
+    SeasonListTypeInfo,
+    SeasonListTypeInfo['fields']
+  >
+) => import('@keystone-next/keystone/schema').ListConfig<
+  SeasonListTypeInfo,
+  SeasonListTypeInfo['fields']
+>;
+
 export type UserListTypeInfo = {
   key: 'User';
   fields: 'id' | 'name' | 'email' | 'password';
@@ -158,5 +244,6 @@ export type UserListFn = (
 >;
 
 export type KeystoneListsTypeInfo = {
+  readonly Season: SeasonListTypeInfo;
   readonly User: UserListTypeInfo;
 };

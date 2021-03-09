@@ -8,20 +8,12 @@ import {
 } from '@keystone-next/fields';
 import { document } from '@keystone-next/fields-document';
 
+import { User } from './schemas/User';
+import { Season } from './schemas/Season';
+
 export const lists = createSchema({
-  User: list({
-    ui: {
-      listView: {
-        initialColumns: ['name', 'email'],
-      },
-    },
-    fields: {
-      name: text({ isRequired: true }),
-      email: text({ isRequired: true, isUnique: true }),
-      password: password(),
-      // posts: relationship({ ref: 'Post.author', many: true }),
-    },
-  }),
+  Season,
+  User,
   /*
   Post: list({
     fields: {

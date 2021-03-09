@@ -1,4 +1,69 @@
 """ A keystone list """
+type Season {
+  id: ID!
+  year: String
+}
+
+input SeasonWhereInput {
+  AND: [SeasonWhereInput]
+  OR: [SeasonWhereInput]
+  id: ID
+  id_not: ID
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  year: String
+  year_not: String
+  year_contains: String
+  year_not_contains: String
+  year_starts_with: String
+  year_not_starts_with: String
+  year_ends_with: String
+  year_not_ends_with: String
+  year_i: String
+  year_not_i: String
+  year_contains_i: String
+  year_not_contains_i: String
+  year_starts_with_i: String
+  year_not_starts_with_i: String
+  year_ends_with_i: String
+  year_not_ends_with_i: String
+  year_in: [String]
+  year_not_in: [String]
+}
+
+input SeasonWhereUniqueInput {
+  id: ID!
+}
+
+enum SortSeasonsBy {
+  id_ASC
+  id_DESC
+  year_ASC
+  year_DESC
+}
+
+input SeasonUpdateInput {
+  year: String
+}
+
+input SeasonsUpdateInput {
+  id: ID!
+  data: SeasonUpdateInput
+}
+
+input SeasonCreateInput {
+  year: String
+}
+
+input SeasonsCreateInput {
+  data: SeasonCreateInput
+}
+
+""" A keystone list """
 type User {
   id: ID!
   name: String
@@ -271,6 +336,24 @@ input _ListSchemaFieldsInput {
 }
 
 type Mutation {
+  """ Create a single Season item. """
+  createSeason(data: SeasonCreateInput): Season
+
+  """ Create multiple Season items. """
+  createSeasons(data: [SeasonsCreateInput]): [Season]
+
+  """ Update a single Season item by ID. """
+  updateSeason(id: ID!, data: SeasonUpdateInput): Season
+
+  """ Update multiple Season items by ID. """
+  updateSeasons(data: [SeasonsUpdateInput]): [Season]
+
+  """ Delete a single Season item by ID. """
+  deleteSeason(id: ID!): Season
+
+  """ Delete multiple Season items by ID. """
+  deleteSeasons(ids: [ID!]): [Season]
+
   """ Create a single User item. """
   createUser(data: UserCreateInput): User
 
@@ -325,6 +408,19 @@ input CreateInitialUserInput {
 }
 
 type Query {
+  """ Search for all Season items which match the where clause. """
+  allSeasons(where: SeasonWhereInput, search: String, sortBy: [SortSeasonsBy!], orderBy: String, first: Int, skip: Int): [Season]
+
+  """ Search for the Season item with the matching ID. """
+  Season(where: SeasonWhereUniqueInput!): Season
+
+  """ Perform a meta-query on all Season items which match the where clause. 
+  """
+  _allSeasonsMeta(where: SeasonWhereInput, search: String, sortBy: [SortSeasonsBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+
+  """ Retrieve the meta-data for the Season list. """
+  _SeasonsMeta: _ListMeta
+
   """ Search for all User items which match the where clause. """
   allUsers(where: UserWhereInput, search: String, sortBy: [SortUsersBy!], orderBy: String, first: Int, skip: Int): [User]
 
