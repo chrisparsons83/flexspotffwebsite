@@ -10,7 +10,14 @@ The backend runs on port 4000 by default.
 
 ### Prerequisites
 
+#### **Required:**
+
 NodeJS >= v14.0
+
+#### **Optional but helpful:**
+
+Docker
+Docker Compose
 
 ### Installing
 
