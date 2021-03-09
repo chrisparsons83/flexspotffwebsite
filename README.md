@@ -21,7 +21,9 @@ Docker Compose
 ### Installing
 
 - In root directory, run `docker-compose up -d` to get a database running.
+- Inside `/backend`, run `yarn`
 - Inside `/backend`, run `yarn dev`
+- Inside `/frontend`, run `yarn`
 - Inside `/frontend`, run `yarn dev`
 
 ## Running the tests
